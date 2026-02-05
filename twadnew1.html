@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallyWise Framework Ads Set 2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+        :root {
+            --tw-navy: #2e2e42;
+            --tw-green: #76d752;
+            --tw-white: #ffffff;
+            --tw-red: #ff5252;
+            --tw-gray: #f3f4f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #222;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        .ad-container {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            background: var(--tw-white);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-area {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 20;
+            width: 240px;
+        }
+        .logo-area img { width: 100%; height: auto; }
+
+        /* =========================================
+           AD 19: WHY/PROBLEM
+           "Why are [audience] [problem] when [contrasting truth]?"
+           Design: Split layout (Question vs Answer)
+           ========================================= */
+        .ad-19 {
+            background: var(--tw-navy);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ad-19 .top-q {
+            height: 40%;
+            padding: 60px;
+            padding-top: 150px;
+            display: flex;
+            align-items: center;
+        }
+        .ad-19 .top-q h1 {
+            color: white; font-size: 56px; font-weight: 800; line-height: 1.1;
+        }
+        .ad-19 .top-q h1 span { color: var(--tw-green); border-bottom: 4px solid var(--tw-green); }
+
+        .ad-19 .bottom-a {
+            height: 60%;
+            background: white;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            padding: 60px;
+            position: relative;
+        }
+
+        .ad-19 .bottom-a h2 {
+            font-size: 32px; color: var(--tw-navy); margin-bottom: 30px;
+        }
+
+        .ad-19 .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .ad-19 .f-item {
+            font-size: 20px; font-weight: 600; color: #555; display: flex; align-items: center;
+        }
+        .ad-19 .f-icon {
+            color: var(--tw-green); margin-right: 10px; font-size: 24px;
+        }
+
+        .ad-19 .cta-float {
+            position: absolute; bottom: 50px; right: 50px;
+            background: var(--tw-navy); color: white;
+            padding: 20px 50px; border-radius: 50px;
+            font-size: 24px; font-weight: 700;
+        }
+
+        /* =========================================
+           AD 20: HOW/OUTCOME
+           "How [audience] [outcome] without [objection]"
+           Design: "The Path" / Arrow Flow
+           ========================================= */
+        .ad-20 {
+            background: #fff;
+            padding: 60px;
+        }
+
+        .ad-20 h1 {
+            margin-top: 100px;
+            font-size: 64px; font-weight: 900; line-height: 1; color: var(--tw-navy);
+            margin-bottom: 20px;
+        }
+        .ad-20 h1 .highlight { background: var(--tw-green); padding: 0 15px; color: var(--tw-navy); }
+
+        .ad-20 .subhead { font-size: 32px; color: #666; margin-bottom: 60px; max-width: 900px; }
+
+        .ad-20 .path-container {
+            background: #f4f6f8;
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px dashed #ccc;
+        }
+        
+        .ad-20 .path-title { font-size: 24px; font-weight: 800; color: var(--tw-navy); margin-bottom: 20px; text-transform: uppercase;}
+
+        .ad-20 .grid-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .ad-20 .g-item {
+            background: white; padding: 15px 20px; border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+            font-weight: 600; font-size: 20px; color: #333;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .ad-20 .g-item::after { content:'✓'; color: var(--tw-green); font-weight: 900; }
+
+        .ad-20 .offer-tag {
+            margin-top: 40px;
+            display: inline-block;
+            background: var(--tw-green); color: var(--tw-navy);
+            font-size: 36px; font-weight: 800; padding: 15px 40px;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 0 var(--tw-navy);
+        }
+
+        /* =========================================
+           AD 21: BELIEF-SHIFT
+           "[Common belief]. Here's what [truth] teaches"
+           Design: "X" vs "Check" / Correction Tape
+           ========================================= */
+        .ad-21 {
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .ad-21 .belief-box {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .ad-21 .belief-text {
+            font-size: 60px; font-weight: 800; color: #bbb;
+            text-decoration: line-through; text-decoration-color: var(--tw-red); text-decoration-thickness: 5px;
+        }
+        .ad-21 .stamp {
+            position: absolute; top: -20px; right: -40px;
+            color: var(--tw-red); font-weight: 900; border: 5px solid var(--tw-red);
+            padding: 5px 20px; transform: rotate(15deg); font-size: 30px; opacity: 0.8;
+        }
+
+        .ad-21 .truth-box {
+            background: var(--tw-navy);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .ad-21 h3 { font-size: 30px; color: var(--tw-green); margin-bottom: 20px; text-transform: uppercase; }
+        
+        .ad-21 .list-col {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .ad-21 .li-item { font-size: 22px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .ad-21 .li-item b { color: var(--tw-green); }
+
+        /* =========================================
+           AD 22: SECRET/CURIOSITY
+           "The [mechanism] that [result] but [%] don't know"
+           Design: "Confidential File" / Dark Mode Spotlight
+           ========================================= */
+        .ad-22 {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Spotlight Effect */
+        .ad-22::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(118, 215, 82, 0.15) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .ad-22 .content-z { position: relative; z-index: 10; }
+
+        .ad-22 h1 {
+            font-size: 68px; font-weight: 800; line-height: 1.1; margin-bottom: 40px;
+        }
+        .ad-22 h1 span { color: var(--tw-green); font-family: 'Caveat', cursive; font-size: 80px; }
+
+        .ad-22 .secret-box {
+            border: 2px solid #444;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 4px;
+        }
+        
+        .ad-22 .secret-label {
+            background: var(--tw-red); color: white; display: inline-block;
+            padding: 5px 10px; font-weight: bold; font-size: 14px; margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .ad-22 .secret-list {
+            font-family: 'Courier New', monospace;
+            font-size: 24px; color: #ddd;
+            display: grid; grid-template-columns: 1fr; gap: 15px;
+        }
+        
+        .ad-22 .secret-item::before { content: '>> '; color: var(--tw-green); }
+
+        .ad-22 .cta-btn {
+            margin-top: 40px;
+            background: var(--tw-green); color: black;
+            font-weight: 800; font-size: 28px; padding: 20px; text-align: center;
+            text-transform: uppercase; cursor: pointer;
+        }
+
+        /* =========================================
+           AD 23: WHAT IF
+           "What if [belief] isn't [assumption]—but [reframe]?"
+           Design: Cloud / Dream / Thought Bubble
+           ========================================= */
+        .ad-23 {
+            background: #eefcf1; /* Very light green */
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-23 .bubble {
+            background: white;
+            padding: 50px 70px;
+            border-radius: 50px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(118, 215, 82, 0.2);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        /* Triangle for speech bubble */
+        .ad-23 .bubble::after {
+            content: ''; position: absolute; bottom: -30px; left: 50%;
+            transform: translateX(-50%);
+            border-width: 30px 30px 0; border-style: solid;
+            border-color: white transparent; display: block; width: 0;
+        }
+
+        .ad-23 h1 {
+            font-size: 54px; color: var(--tw-navy); line-height: 1.1; font-weight: 800;
+        }
+        .ad-23 h1 span { color: var(--tw-green); }
+
+        .ad-23 .solution-card {
+            background: var(--tw-navy);
+            color: white;
+            width: 100%;
+            border-radius: 30px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ad-23 h3 { font-size: 28px; color: var(--tw-green); margin-bottom: 30px; text-transform: uppercase;}
+
+        .ad-23 .tags {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
+        }
+        .ad-23 .tag {
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 20px; border-radius: 20px; font-size: 18px;
+        }
+        .ad-23 .tag.highlight { background: var(--tw-green); color: var(--tw-navy); font-weight: bold; border: none;}
+
+        .ad-23 .price { font-size: 50px; font-weight: 900; margin-top: 30px; }
+
+    </style>
+</head>
+<body>
+    <!-- =========================================
+
+    <!-- =========================================
+         AD 19: WHY/PROBLEM
+    ========================================= -->
+     <!-- =========================================
+
+ <div class="ad-container ad-19">
+        <div class="logo-area" style="filter: brightness(0) invert(1);">
+            <img src="https://tallywise.com/wp-content/uploads/2024/06/TallyWise_Side.png" alt="TallyWise">
+        </div>
+
+        <div class="top-q">
+            <h1>Why are small businesses <span>leaking profit</span> when their books are "clean"?</h1>
+        </div>
+
+        <div class="bottom-a">
+            <h2>Because data entry isn't strategy. You need a CFO.</h2>
+            <div class="feature-list">
+                <div class="f-item"><span class="f-icon">●</span> Leak Analysis</div>
+                <div class="f-item"><span class="f-icon">●</span> Hidden Profit Detection</div>
+                <div class="f-item"><span class="f-icon">●</span> Scaling Strategy</div>
+                <div class="f-item"><span class="f-icon">●</span> Financial Health Audit</div>
+                <div class="f-item"><span class="f-icon">●</span> 5X CFO Sessions</div>
+                <div class="f-item"><span class="f-icon">●</span> DIY Framework</div>
+            </div>
+            <div class="cta-float">Stop Leaking. Start at $17.</div>
+        </div>
+    </div>
+    ========================================= -->
+
+    <!-- =========================================
+         AD 20: HOW/OUTCOME
+    ========================================= -->
+    <div class="ad-container ad-20">
+        <div class="logo-area">
+            <img src="https://tallywise.com/wp-content/uploads/2024/06/TallyWise_Side.png" alt="TallyWise">
+        </div>
+
+        <h1>How to get <span class="highlight">CFO-Level Growth</span> without the $150k Salary</h1>
+        <div class="subhead">Don't hire a full-time executive. Rent the outcome.</div>
+
+        <div class="path-container">
+            <div class="path-title">The TallyWise Framework:</div>
+            <div class="grid-features">
+                <div class="g-item">Guaranteed Clean Books</div>
+                <div class="g-item">Hidden Profit Detection</div>
+                <div class="g-item">Leak Analysis</div>
+                <div class="g-item">Proven Scaling Strategy</div>
+                <div class="g-item">5X Growth CFO Session</div>
+                <div class="g-item">DIY Bookkeeping Framework</div>
+                <div class="g-item" style="grid-column: 1 / -1; background: #e6f9df; color: var(--tw-navy);">Financial Health Audit Included</div>
+            </div>
+        </div>
+
+        <div class="offer-tag">
+            Start Today: $17 - $37
+        </div>
+    </div>
+
+    <!-- =========================================
+         AD 21: BELIEF-SHIFT
+    ========================================= -->
+    <!-- =========================================
+
+  <div class="ad-container ad-21">
+        <div class="logo-area">
+            <img src="https://tallywise.com/wp-content/uploads/2024/06/TallyWise_Side.png" alt="TallyWise">
+        </div>
+
+        <div class="belief-box">
+            <div class="belief-text">"Bookkeeping is just data entry"</div>
+            <div class="stamp">WRONG</div>
+        </div>
+
+        <div class="truth-box">
+            <h3>Here's what a CFO Mindset actually teaches:</h3>
+            
+            <div class="list-col">
+                <div class="li-item">It's <b>Leak Analysis</b></div>
+                <div class="li-item">It's <b>Profit Detection</b></div>
+                <div class="li-item">It's <b>Scaling Strategy</b></div>
+                <div class="li-item">It's <b>Clean Books (Guaranteed)</b></div>
+                <div class="li-item">It's <b>Health Audits</b></div>
+                <div class="li-item">It's <b>5X Growth</b></div>
+            </div>
+            
+            <div style="margin-top: 40px; font-size: 24px; font-weight: bold;">
+                Shift your mindset. Fix your books. <br>
+                <span style="color: var(--tw-green); font-size: 32px;">Book Now.</span>
+            </div>
+        </div>
+    </div>
+    ========================================= -->
+
+    <!-- =========================================
+         AD 22: SECRET/CURIOSITY
+    ========================================= -->
+    <div class="ad-container ad-22">
+        <div class="logo-area" style="filter: brightness(0) invert(1);">
+            <img src="https://tallywise.com/wp-content/uploads/2024/06/TallyWise_Side.png" alt="TallyWise">
+        </div>
+
+        <div class="content-z">
+            <h1>The hidden <span>"Leak Analysis"</span> that finds lost money, but 90% ignore.</h1>
+            
+            <div class="secret-box">
+                <div class="secret-label">CLASSIFIED METHOD</div>
+                <div class="secret-list">
+                    <div class="secret-item">Hidden Profit Detection</div>
+                    <div class="secret-item">Guaranteed Clean Books</div>
+                    <div class="secret-item">Proven Scaling Strategy</div>
+                    <div class="secret-item">Financial Health Audit</div>
+                    <div class="secret-item">5X Growth CFO Session</div>
+                    <div class="secret-item">DIY Bookkeeping Framework</div>
+                </div>
+            </div>
+
+            <div class="cta-btn">
+                Reveal My Hidden Profit ($17)
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         AD 23: WHAT IF (Reframe)
+    ========================================= -->
+    <div class="ad-container ad-23">
+        <div class="logo-area">
+            <img src="https://tallywise.com/wp-content/uploads/2024/06/TallyWise_Side.png" alt="TallyWise">
+        </div>
+
+        <div class="bubble">
+            <h1>What if your financial mess isn't "laziness"—but just a <span>Missing System?</span></h1>
+        </div>
+
+        <div class="solution-card">
+            <h3>The System You Are Missing:</h3>
+            <div class="tags">
+                <div class="tag highlight">Guaranteed Clean Books</div>
+                <div class="tag highlight">Leak Analysis</div>
+                <div class="tag">Hidden Profit Detection</div>
+                <div class="tag">DIY Framework</div>
+                <div class="tag">Scaling Strategy</div>
+                <div class="tag">5X CFO Session</div>
+                <div class="tag highlight">Financial Health Audit</div>
+            </div>
+
+            <div class="price">Install The System: $17</div>
+        </div>
+    </div>
+
+</body>
+</html>
